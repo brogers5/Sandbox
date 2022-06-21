@@ -1,0 +1,53 @@
+name: Package is outdated
+description: This package is currently outdated, and no new version has been submitted for moderation.
+title: "Package is outdated"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report that this package is out of date.
+        
+        To validate the update request, please provide the following information.
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      description: Before continuing, please verify the following items.
+      options:
+        - label: I have checked [the package's Version History](https://community.chocolatey.org/packages/FoxitReader#versionhistory), and verified that a new package for this version has not already been submitted.
+          required: true
+        - label: I have checked [the Community Repository's moderation queue](https://community.chocolatey.org/packages?q=&moderatorQueue=true&moderationStatus=all-statuses&prerelease=false&sortOrder=package-download-count), and verified a package for this version is not awaiting review.
+          required: true
+        - label: I have checked [this repository's Issues](https://github.com/brogers5/chocolatey-package-foxitreader/issues), and verified there are no known upstream issues blocking this new package version.
+          required: true
+        - label: I have checked [this repository's Issues](https://github.com/brogers5/chocolatey-package-foxitreader/issues), and verified the package has not already been reported as outdated.
+          required: true
+        - label: I have verified that the new version is a stable release.
+          required: true
+        - label: I have verified that the new version is currently available for Windows, and is not exclusive to other supported operating systems.
+          required: true
+  - type: input
+    id: software-version
+    attributes:
+      label: New Version Number
+      description: Please share the version number of the latest stable version.
+      placeholder: ex 1.2.3.4
+    validations:
+      required: true
+  - type: input
+    id: download-location
+    attributes:
+      label: Download Location
+      description: Please provide a direct download link for where the software can be downloaded from (i.e. EXE, MSI, ZIP archive, etc).
+      placeholder: http://www.example.com/
+    validations:
+      required: false
+  - type: textarea
+    id: additional-details
+    attributes:
+      label: Anything else?
+      description: |
+        Any other details you feel may be helpful for expediting an update?
+
+        Tip: You can attach images by clicking this area to highlight it and then drag files in.
+    validations:
+      required: false
