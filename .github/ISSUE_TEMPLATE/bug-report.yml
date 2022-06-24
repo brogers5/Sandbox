@@ -1,0 +1,140 @@
+name: Package Bug Report
+description: Did this package fail to install/upgrade/uninstall? Or did you find unexpected behavior?
+title: "Bug"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to file a bug report!
+        
+        To prevent unnecessary delays, please provide as much information as you can below.
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Before continuing, please verify the following items.
+      options:
+        - label: I have checked the software's System Requirements, and verified my system meets or exceeds these.
+          required: true
+        - label: I have checked [this repository's Issues](https://github.com/brogers5/chocolatey-package-foxitreader/issues), and verified this has not already been reported.
+          required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: |
+        What does your Windows environment look like? 
+        
+        - Operating System Version (run `[System.Environment]::OSVersion.ToString()` in a PowerShell session)
+        - OS Edition (e.g. Home, Pro, Enterprise, etc.)
+        - OS Architecture (e.g. 32-bit, 64-bit, etc.)
+        - PowerShell Version Table (run `$PSVersionTable` in a PowerShell session)
+        - Shell (e.g. Command Prompt, Windows PowerShell, PowerShell Core/7, etc.)
+        - Terminal Emulator (e.g. Windows Console Host, Windows Terminal, etc.)
+        - Chocolatey Version (printed by most choco commands)
+      value: |
+        - Operating System Version:
+        - OS Edition: 
+        - OS Architecture: 
+        - PowerShell Version Table: 
+        - Shell: 
+        - Terminal Emulator: 
+        - Chocolatey Version: 
+      render: markdown
+    validations:
+      required: true
+  - type: input
+    id: package-version
+    attributes:
+      label: Package Version(s)
+      description: |
+        Which version(s) of the package are affected by this?
+      placeholder: ex 5.0.0 or 4.0.0 -> 4.1.0 for upgrades.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction Steps
+      description: |
+        How can this behavior be reproduced? Please include the exact steps that are required. 
+      placeholder: |
+        1. In this environment...
+        2. Run '...'
+        3. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behaviour
+      description: Please describe the behavior you are expecting.
+      placeholder: ex Install command succeeds without issues.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: Please describe the behavior you are actually experiencing.
+      placeholder: ex Installer fails with error code X.
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducibility
+    attributes:
+      label: Reproducibility
+      description: How consistently can this behavior be reproduced?
+      options:
+        - Always
+        - Occasionally
+        - Rarely
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: |
+        What is the impact this has on the package?
+
+        Terminology:
+        - Major Package Functionality: Install, Upgrade, Uninstall commands
+        - Minor Package Functionality: Package Parameters, UI automation scripts
+        - Cosmetic Defects: Typos, misspellings, other issues with messages and/or documentation
+
+        Values:
+        - Critical: Major Package Functionality is broken, without any practical workarounds (e.g. breaking changes in download URL, deployment steps, installer arguments, or required configuration). A package fix version is required, and may require vendor support.
+        - High:  Major Package Functionality is broken, but has a workaround (e.g. overriding defined checksum(s), installer arguments; install/update dependencies; terminating processes; skipping scripts; manually install/upgrade/uninstall non-silently or outside of Chocolatey; difficult post-install configuration). A package fix version may be required.
+        - Medium:  Minor Package Functionality is broken (e.g. manual installer interaction; easy post-install configuration). This may have a workaround, and will likely wait for the next scheduled package update.
+        - Low: Cosmetic Defects and technical debt that do not affect package functionality. This can definitely wait for the next scheduled package update.
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Chocolatey Log
+      description: |
+        Include the log file that has been created by Chocolatey. Please link to a GitHub Gist (preferred), or alternatively, attach a log file or paste relevant contents. Before posting, review the log's contents and **scrub any sensitive information**.
+
+        Tips: 
+        - For standard installations, the Chocolatey log file is located at `C:\ProgramData\chocolatey\logs\chocolatey.log`.
+        - Alternatively, use the `--log-file=VALUE` option to write a log file for the relevant command(s).
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: additional-details
+    attributes:
+      label: Anything else?
+      description: |
+        Any other details you feel may be helpful for expediting a fix?
+
+        Tip: You can attach images by clicking this area to highlight it and then drag files in.
+    validations:
+      required: false
