@@ -25,6 +25,8 @@ body:
           required: true
         - label: I have verified that the new version is currently available for Windows, and is not exclusive to other supported operating systems.
           required: true
+        - label: I have verified that the new version has been available for at least 2 days.
+          required: true
   - type: input
     id: software-version
     attributes:
