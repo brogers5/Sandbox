@@ -43,6 +43,17 @@ body:
       placeholder: http://www.example.com/
     validations:
       required: false
+  - type: input
+    id: checksum
+    attributes:
+      label: Checksum
+      description: |
+        Please provide a SHA256 checksum calculated from the downloaded software.
+
+        Tip: Run `(Get-FileHash -Path <file> -Algorithm SHA256).Hash` in a PowerShell session to print the hash.
+      placeholder: 41489ebb20ea0bda5564d70e26ca648c4597ba68df1b7cba54ac8bc647d3a5da
+    validations:
+        required: false
   - type: textarea
     id: additional-details
     attributes:
