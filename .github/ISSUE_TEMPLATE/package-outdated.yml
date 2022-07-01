@@ -21,16 +21,16 @@ body:
           required: true
         - label: I have checked [this repository's Issues](https://github.com/brogers5/chocolatey-package-foxitreader/issues), and verified the package has not already been reported as outdated.
           required: true
-        - label: I have verified that the new version is a stable release.
+        - label: I have verified that this version is a stable release.
           required: true
-        - label: I have verified that the new version is currently available for Windows, and is not exclusive to other supported operating systems.
+        - label: I have verified that this version is currently available for Windows, and is not exclusive to other supported operating systems.
           required: true
-        - label: I have verified that the new version has been available for at least 2 days.
+        - label: I have verified that this version has been available for at least 2 days.
           required: true
   - type: input
     id: software-version
     attributes:
-      label: New Version Number
+      label: Version Number
       description: Please share the version number of the latest stable version.
       placeholder: ex 1.2.3.4
     validations:
@@ -40,7 +40,7 @@ body:
     attributes:
       label: Download Location
       description: Please provide a direct download link for where the software can be downloaded from (i.e. EXE, MSI, ZIP archive, etc).
-      placeholder: http://www.example.com/
+      placeholder: ex http://www.example.com/
     validations:
       required: false
   - type: input
@@ -50,8 +50,8 @@ body:
       description: |
         Please provide a SHA256 checksum calculated from the downloaded software.
 
-        Tip: Run `(Get-FileHash -Path <file> -Algorithm SHA256).Hash` in a PowerShell session to print the hash.
-      placeholder: 41489ebb20ea0bda5564d70e26ca648c4597ba68df1b7cba54ac8bc647d3a5da
+        Tip: Run `(Get-FileHash -Path <file> -Algorithm SHA256).Hash` in a PowerShell session to print the hash value.
+      placeholder: ex 41489EBB20EA0BDA5564D70E26CA648C4597BA68DF1B7CBA54AC8BC647D3A5DA
     validations:
         required: false
   - type: textarea
