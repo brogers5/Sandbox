@@ -5,6 +5,9 @@ body:
   - type: markdown
     attributes:
       value: |
+        **Reporting a security-related issue? Please review this repository's [security policy](https://github.com/brogers5/Sandbox/security/policy).**
+        **Reporting an outdated checksum? Please use the [Package is outdated](https://github.com/brogers5/Sandbox/issues/new?assignees=&labels=&template=package-outdated.yml&title=Package+is+outdated) template instead.**
+        
         Thank you for taking the time to file a bug report!
         
         To prevent unnecessary delays, please provide as much information as you can below.
@@ -33,7 +36,7 @@ body:
         - Terminal Emulator (e.g. Windows Console Host, Windows Terminal, etc.)
         - Chocolatey Version (printed by most choco commands)
       value: |
-        - Operating System Version:
+        - Operating System Version: 
         - OS Edition: 
         - OS Architecture: 
         - PowerShell Version Table: 
@@ -105,7 +108,7 @@ body:
 
         Values:
         - Critical: Major Package Functionality is broken, without any practical workarounds (e.g. breaking changes in download URL, deployment steps, installer arguments, or required configuration). A package fix version is required, and may require vendor support.
-        - High:  Major Package Functionality is broken, but has a workaround (e.g. overriding defined checksum(s), installer arguments; install/update dependencies; terminating processes; skipping scripts; manually install/upgrade/uninstall non-silently or outside of Chocolatey; difficult post-install configuration). A package fix version may be required.
+        - High:  Major Package Functionality is broken, but has a workaround (e.g. overriding installer arguments; install/update dependencies; terminating processes; skipping scripts; manually install/upgrade/uninstall non-silently or outside of Chocolatey; difficult post-install configuration). A package fix version may be required.
         - Medium:  Minor Package Functionality is broken (e.g. manual installer interaction; easy post-install configuration). This may have a workaround, and will likely wait for the next scheduled package update.
         - Low: Cosmetic Defects and technical debt that do not affect package functionality. This can definitely wait for the next scheduled package update.
       options:
