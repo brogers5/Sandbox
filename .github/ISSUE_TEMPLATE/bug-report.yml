@@ -70,7 +70,7 @@ body:
   - type: textarea
     id: expected-behavior
     attributes:
-      label: Expected Behaviour
+      label: Expected Behavior
       description: Please describe the behavior you are expecting.
       placeholder: ex Install command succeeds without issues.
     validations:
@@ -109,7 +109,7 @@ body:
         Values:
         - Critical: Major Package Functionality is broken, without any practical workarounds (e.g. breaking changes in download URL, deployment steps, installer arguments, or required configuration). A package fix version is required, and may require vendor support.
         - High:  Major Package Functionality is broken, but has a workaround (e.g. overriding installer arguments; install/update dependencies; terminating processes; skipping scripts; manually install/upgrade/uninstall non-silently or outside of Chocolatey; difficult post-install configuration). A package fix version may be required.
-        - Medium:  Minor Package Functionality is broken (e.g. manual installer interaction; easy post-install configuration). This may have a workaround, and will likely wait for the next scheduled package update.
+        - Medium:  Minor Package Functionality is broken. This may have a workaround (e.g. manual installer interaction; easy post-install configuration, etc.), and will likely wait for the next scheduled package update.
         - Low: Cosmetic Defects and technical debt that do not affect package functionality. This can definitely wait for the next scheduled package update.
       options:
         - Critical
